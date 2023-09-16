@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        *:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.5rem rgba(253, 242, 233, 0.5);
+        }
+        
+        html {
+            font-size: 10px;
+            font-family: "Rubik", sans-serif;
+        }
+        
+        .header {
+            height: 6.4rem;
+            background-color: #ebdbcd;
+            padding: 0 4.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo img {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+        
+        .header p {
+            font-size: 3.2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        nav {
+            display: flex;
+            gap: 4.8rem;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav a:link,
+        nav a:visited {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 2.4rem;
+            color: rgb(35, 35, 35);
+            font-weight: 500;
+        }
+        
+        nav a:hover,
+        nav a:active {
+            color: rgb(167, 109, 222);
+        }
+        
+        .contact {
+            display: block;
+            padding: 8px 2.4rem;
+            background-color: rgb(223, 111, 111);
+            border-radius: 1rem;
+        }
+        
+        .contact:hover {
+            background-color: rgb(239, 210, 210);
+            color: rgb(41, 40, 40);
+            /* border: 2px solid grey; */
+            box-shadow: inset 0 0 0 2px rgba(128, 128, 128, 0.556);
+        }
+        
+        .section-hero {
+            padding: 3.2rem 0;
+            background-color: rgba(238, 183, 162, 0.504);
+        }
+        
+        .hero {
+            max-width: 130rem;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9.6rem;
+        }
+        
+        .hero-text {
+            display: flex;
+            gap: 2.4rem;
+            flex-direction: column;
+            align-items: center;
+            padding: 3.2rem 0;
+            /* justify-content: center; */
+        }
+        
+        .hero-text p {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 3.2rem;
+        }
+        
+        .primary-heading {
+            font-size: 4.8rem;
+            font-weight: 700;
+        }
+        
+        .btn:link,
+        .btn:visited {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 500;
+            text-decoration: none;
+            background-color: rgb(163, 90, 232);
+            color: rgb(255, 255, 255);
+            padding: 1.2rem 2.4rem;
+            border-radius: 3.2rem;
+        }
+        
+        .btn:hover,
+        .btn:active {
+            background-color: rgb(239, 45, 45);
+            color: rgba(248, 248, 248, 0.562);
+        }
+        
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .skills {
+            /* max-width: 130rem; */
+            padding: 3.2rem 0;
+        }
+        
+        .my-skill {
+            text-transform: uppercase;
+            font-size: 2.4rem;
+            color: rgb(95, 93, 93);
+            text-align: center;
+        }
+        
+        .skill {
+            margin: 3.2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .skill p {
+            font-size: 3.2rem;
+            font-weight: 700;
+            filter: brightness(0);
+            opacity: 30%;
+        }
+        
+        .project {
+            padding: 3.2rem 0;
+            background-color: rgba(238, 183, 162, 0.504);
+        }
+        
+        .project-view {
+            max-width: 130rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 9.6rem;
+            padding: 1.2rem 2.4rem;
+        }
+        
+        .detail-icon {
+            width: 2.4rem;
+            height: 2.4rem;
+            stroke: white;
+        }
+        
+        .project-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .detail {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            /* border: 2px solid rgb(147, 143, 143); */
+            background-color: rgb(42, 85, 225);
+            color: white;
+            padding: 6.4rem 1.8rem 1.8rem 1.8rem;
+            border-radius: 8px;
+        }
+        
+        .project-link:link,
+        .project-link:visited {
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .project-link:hover,
+        .project-link:active {
+            color: rgb(229, 161, 137);
+        }
+        
+        .about {
+            padding: 3.2rem 0;
+        }
+        
+        .about-me img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            border: 4px solid rgb(236, 163, 137);
+        }
+        
+        .about-me {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4.8rem;
+        }
+        
+        .icon {
+            width: 2.4rem;
+            height: 2.4rem;
+            stroke: white;
+        }
+        
+        .academic {
+            display: flex;
+            gap: 8rem;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .certi {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 1.8rem 1.8rem 1.8rem;
+            background-color: rgb(122, 139, 226);
+            border-radius: 10px;
+        }
+        
+        .activity {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+            background-color: rgb(201, 238, 238);
+            border-radius: 10px;
+        }
+        
+        li {
+            font-size: 1.8rem;
+            letter-spacing: 1.05;
+            line-height: 1.5;
+            margin-left: 1.8rem;
+        }
+        
+        .section-cta {
+            padding: 3.2rem 0;
+            background-color: rgba(199, 230, 230, 0.505);
+        }
+        
+        .cta {
+            width: 90rem;
+            margin: 4.8rem auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+            border-radius: 11px;
+            background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+            overflow: hidden;
+            /* height: 40rem; */
+        }
+        
+        .cta-box-text {
+            padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+        }
+        
+        .cta-img {
+            background-image: url("/images/backphoto.jpg");
+            background-size: cover;
+            background-position: center;
+            opacity: 40%;
+        }
+        
+        .cta-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 3.2rem;
+            row-gap: 2.4rem;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cta-form label {
+            display: block;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        
+        .cta-form input {
+            width: 100%;
+            padding: 6px 1.2rem;
+            font-size: 1.8rem;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .cta-form select {
+            padding: 6px 1.2rem;
+            font-size: 1.8rem;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .cta-btn {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: rgb(38, 35, 35);
+            background-color: rgb(216, 235, 239);
+            padding: 6px 3.2rem;
+            border-radius: 11px;
+            border: none;
+            grid-column: 1/-1;
+            margin-top: 1.2rem;
+        }
+        
+        .cta-btn:hover {
+            background-color: #e53f33;
+            color: #fff;
+        }
+        
+        .cta *:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.5rem rgba(253, 242, 233, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="https://www.linkedin.com/in/pratyush-ujjwal-769b8221b" target="_blank"><img src="/images/photo.jpeg" alt="profile photo" /></a>
+            <p>PRATYUSH</p>
+        </div>
+        <nav>
+            <a href="#hero-page">Home</a>
+            <a href="#project-page">Project</a>
+            <a href="#about-page">About</a>
+            <a href="#contact-page" class="contact">contact</a>
+        </nav>
+    </header>
+    <section class="section-hero" id="hero-page">
+        <div class="hero">
+            <div class="hero-text">
+                <h1 class="primary-heading">Pratyush Ujjwal</h1>
+                <p>Hi, I am student of NIT Patna, recently i have completed my graduation. Currently, I am searching job for <strong>Development Role</strong>. All the details have been described below pages.
+                </p>
+                <a href="#contact-page" class="btn">Hire Me</a>
+            </div>
+            <div class="hero-img">
+                <img src="/images/pratyush2.jpeg" />
+            </div>
+        </div>
+    </section>
+    <section class="skills">
+        <p class="my-skill"><strong>My Skills</strong></p>
+        <div class="skill">
+            <p>C++</p>
+            <p>Python</p>
+            <p>JavaScript</p>
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>OOPs</p>
+            <p>DBMS</p>
+            <p>SQL</p>
+            <p>TABLEAU</p>
+        </div>
+    </section>
+    <section class="project" id="project-page">
+        <p class="my-skill" style="margin-bottom: 2.4rem;"><strong>My Project and work experince</strong></p>
+        <div class="project-view">
+            <div class="project-text">
+                <p style="font-size: 8rem;font-weight: 500; margin-bottom: 3.2rem;">1+</p>
+                <p style="font-size: 1.8rem;color: black;">Years <br> Experience <br> Working</p>
+            </div>
+            <div class="project-detail">
+                <h2 style="font-size: 2.4rem;font-weight: 500;margin-bottom: 3.2rem;">Product Designer and Developer, specialized in Web Development and Data Visuallizations.</h2>
+                <div class="detail">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="detail-icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                    </svg>
+                    <p style="font-size: 1.4rem;margin-bottom: 1.2rem;">FrontEnd Developer</p>
+                    <a href="https://github.com/pratyushujjwal/unikaksha-mb-7/tree/main/index" class="project-link" target="_blank">My Project &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about-page">
+        <p class="my-skill" style="margin-bottom: 2.4rem;"><strong>A Bit about me</strong></p>
+        <div class="about-me">
+            <p style="font-size: 4.8rem;font-weight: 500;color: rgb(54, 53, 53);"><strong>Who Am I?</strong></p>
+            <img src="/images/photo.jpeg" alt="about me" />
+            <p style="font-size: 1.8rem;text-align: center;">Hi I'm Pratyush Ujjwal. I am from Buxar, Bihar. I have completed my Matriculation in 2017 and Intermediate in 2019,<br> and also I have done my graduation from NIT Patna in Civil Engineering in 2023.</p>
+        </div>
+        <div class="academic">
+            <div class="certi">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                </svg>
+                <p style="font-size: 1.4rem;margin-bottom: 1.2rem;color: white;">My Certification</p>
+                <a href="#" class="project-link">click here &rarr;</a>
+            </div>
+            <div class="activity">
+                <h3 style="font-size: 1.8rem;">My Extra Curricular Activities &darr;</h3>
+                <ul>
+                    <li>I was the member of CESC club in my college.</li>
+                    <li>I was PR Co-ordinator at 52th annual convection of IWWA.</li>
+                    <li>Member of Robotic club.</li>
+                    <li>We have held different seminar in our college.</li>
+                    <li>I was the captian of cricket team in my college.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section-cta" id="contact-page">
+        <p class="my-skill" style="margin-bottom: 2.4rem;"><strong>My Contact Details</strong></p>
+        <div class="cta">
+            <div class="cta-box-text">
+                <h2 style="font-size: 3.2rem;color: rgb(32, 30, 30);margin-bottom: 3.2rem;">Contact Me Here &darr;</h2>
+                <form class="cta-form" action="#">
+                    <label for="full-name">Enter Your Name</label>
+                    <input id="full-name" type="text" placeholder="Pratyush Ujjwal" required/>
+                    <label for="email">Enter Your Email</label>
+                    <input id="email" type="email" placeholder="me@gmail.com" required/>
+                    <label for="phn">Enter Your Mobile No.</label>
+                    <input id="phn" type="number" placeholder="0123456789" required/>
+                    <label for="choose-here">Qulification</label>
+                    <select id="choose-here" required>
+                        <option value="select-option" style="color: #aaa;">select option below</option>
+                        <option value="B.Tech">B.tech</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Matriculation">Matriculation</option>
+                    </select>
+                    <button class="cta-btn">Submit</button>
+                </form>
+            </div>
+            <div class="cta-img" role="img"></div>
+        </div>
+    </section>
+</body>
+
+</html>
