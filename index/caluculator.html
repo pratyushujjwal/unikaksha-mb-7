@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .calculator {
+            padding: 15px;
+            border-radius: 1em;
+            height: 500px;
+            width: 450px;
+            margin: auto;
+            margin-top: 100px;
+            background-color: #9e9696;
+            box-shadow: rgba(192, 189, 189, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        
+        .display-box {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #f8f0f0;
+            border: solid rgb(72, 70, 70) 0.5px;
+            color: rgb(6, 6, 6);
+            margin-left: 20px;
+            border-radius: 5px;
+            width: 100%;
+            height: 65%;
+            /* padding: 10px 5px; */
+            outline: none;
+        }
+        
+        #btn {
+            background-color: #9aff63;
+        }
+        
+        #btn1 {
+            background-color: rgb(244, 207, 114);
+        }
+        
+        #btn2 {
+            background-color: rgb(244, 207, 114);
+        }
+        
+        input[type=button] {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #eef0a4;
+            color: rgb(13, 13, 13);
+            border: solid rgb(234, 225, 225) 0.5px;
+            width: 100%;
+            border-radius: 5px;
+            height: 70%;
+            outline: none;
+        }
+        
+        input:active[type=button] {
+            background: #e5e5e5;
+            -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+            -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="calculator">
+        <tr>
+            <td colspan="3"> <input class="display-box" type="text" id="result" disabled/> </td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="AC" onclick="clearScreen()" id="btn1" /> </td>
+            <td><input type="button" value="C" onclick="del()" id="btn2" /></td>
+            <td> <input type="button" value="=" onclick="calculate()" id="btn" /> </td>
+            <td> <input type="button" value="^" onclick="display('^')" /> </td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="1" onclick="display('1')" /> </td>
+            <td> <input type="button" value="2" onclick="display('2')" /> </td>
+            <td> <input type="button" value="3" onclick="display('3')" /> </td>
+            <td> <input type="button" value="/" onclick="display('/')" /> </td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="4" onclick="display('4')" /> </td>
+            <td> <input type="button" value="5" onclick="display('5')" /> </td>
+            <td> <input type="button" value="6" onclick="display('6')" /> </td>
+            <td> <input type="button" value="-" onclick="display('-')" /> </td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="7" onclick="display('7')" /> </td>
+            <td> <input type="button" value="8" onclick="display('8')" /> </td>
+            <td> <input type="button" value="9" onclick="display('9')" /> </td>
+            <td> <input type="button" value="+" onclick="display('+')" /> </td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="." onclick="display('.')" /> </td>
+            <td> <input type="button" value="0" onclick="display('0')" /> </td>
+            <td> <input type="button" value="%" onclick="display('%')" /> </td>
+            <td> <input type="button" value="*" onclick="display('*')" /> </td>
+        </tr>
+    </table>
+    <script>
+        function clearScreen() {
+            document.getElementById("result").value = "";
+        }
+
+        function del() {
+            var data = document.getElementById("result");
+            data.value = data.value.substring(0, data.value.length - 1);
+        }
+
+        function display(temp) {
+            document.getElementById("result").value += temp;
+        }
+
+        function calculate() {
+            var x = document.getElementById("result").value;
+            var y = eval(x);
+            document.getElementById("result").value = y;
+        }
+    </script>
+</body>
+
+</html>
